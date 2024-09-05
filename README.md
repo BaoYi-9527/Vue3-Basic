@@ -1,35 +1,32 @@
 # vue-learning
 
-This template should help get you started developing with Vue 3 in Vite.
+### Console
 
-## Recommended IDE Setup
+```shell
+Need to install the following packages:
+create-vue@3.10.4
+Ok to proceed? (y) y
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Vue.js - The Progressive JavaScript Framework
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+√ 请输入项目名称： ... vue-learning
+√ 是否使用 TypeScript 语法？ ... 否
+√ 是否启用 JSX 支持？ ... 否
+√ 是否引入 Vue Router 进行单页面应用开发？ ... 是
+√ 是否引入 Pinia 用于状态管理？ ... 是
+√ 是否引入 Vitest 用于单元测试？ ... 否
+√ 是否要引入一款端到端（End to End）测试工具？ » 不需要
+√ 是否引入 ESLint 用于代码质量检测？ ... 是
+√ 是否引入 Prettier 用于代码格式化？ ... 是
+√ 是否引入 Vue DevTools 7 扩展用于调试? (试验阶段) ... 是
 ```
 
-### Compile and Hot-Reload for Development
+```shell
+npm create vue@latest
 
-```sh
-npm run dev
+# 镜像源
+npm config set registry https://registry.npmmirror.com/ 
 ```
 
-### Compile and Minify for Production
+### Questions
 
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
