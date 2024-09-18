@@ -3,7 +3,7 @@
     <el-col :span="4">
       <div class="grid-content" style="display: flex; align-items: center; height: 100%;">
         <el-avatar  :size="'small'" :src="logo" alt="erp logo"/>
-        <span style="margin-left: 10px;">Company Black List</span>
+        <el-text style="margin-left: 15px" class="mx-1" type="primary">“凤凰非梧桐不栖”</el-text>
       </div>
     </el-col>
     <el-col :span="16">
