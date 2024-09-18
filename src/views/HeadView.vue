@@ -1,12 +1,13 @@
 <template>
   <el-row class="row-bg">
     <el-col :span="4">
-      <div class="grid-content ep-bg-purple-dark">
-        <el-avatar :size="50" :src="logo" alt="erp logo"/>
+      <div class="grid-content" style="display: flex; align-items: center; height: 100%;">
+        <el-avatar  :size="'small'" :src="logo" alt="erp logo"/>
+        <span style="margin-left: 10px;">Company Black List</span>
       </div>
     </el-col>
     <el-col :span="16">
-      <div class="grid-content ep-bg-purple">
+      <div class="grid-content">
         <el-menu
             :default-active="activeIndex"
             class="el-menu-demo"
@@ -14,15 +15,9 @@
             :ellipsis="false"
             @select="handleSelect"
         >
-          <el-menu-item index="1">订单</el-menu-item>
-          <el-menu-item index="2">发货</el-menu-item>
-          <el-menu-item index="3">产品</el-menu-item>
-          <el-menu-item index="4">客户</el-menu-item>
-          <el-menu-item index="4">报表</el-menu-item>
-          <el-menu-item index="4">物流</el-menu-item>
-          <el-menu-item index="4">营销</el-menu-item>
-          <el-menu-item index="4">客服</el-menu-item>
-          <el-menu-item index="4">财务</el-menu-item>
+          <el-menu-item index="1">Post</el-menu-item>
+          <el-menu-item index="2">Company</el-menu-item>
+          <el-menu-item index="3">Q&A</el-menu-item>
         </el-menu>
       </div>
     </el-col>
