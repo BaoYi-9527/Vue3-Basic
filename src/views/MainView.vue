@@ -9,8 +9,20 @@ import PostComponent from "@/components/Post/PostComponent.vue";
       <el-row>
         <el-col :span="18">
           <PostComponent/>
+          <br>
+          <PostComponent/>
+          <br>
+          <PostComponent/>
+          <br>
+          <PostComponent/>
+          <br>
+          <PostComponent/>
+          <br>
         </el-col>
         <el-col :span="6">
+          <el-card style="max-width: 480px; margin-left: 10px; min-height: 700px">
+            <p v-for="o in 4" :key="o" class="text item">{{ 'List item ' + o }}</p>
+          </el-card>
         </el-col>
       </el-row>
 
