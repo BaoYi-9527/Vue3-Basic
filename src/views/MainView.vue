@@ -18,6 +18,48 @@ const badgeItems = [
   {"id": 13, "name": '重庆', "count": 41},
 ]
 
+const postItems = [
+  {
+    "id": 1,
+    "title": "",
+    "city": {
+      "id": 1,
+      "name": "深圳"
+    },
+    "content": "+ 工作时间 955，年假15天 + 8天 FreeDay\n" +
+        "+ 女性员工享有22周全薪产假，男性员工享有12周全薪陪产假\n" +
+        "+ 五险一金、补充商业保险、年度体检、员工关爱计划、ESPP 员工购股计划、斯坦福医学健康计划、上午旅行保险等\n" +
+        "+ 继续教育学费报销、支持攻读在读学位",
+    "desc": "",
+    "company": {
+      "name": "英伟达 NVIDA",
+      "icon": ""
+    },
+    "views": 789,
+    "likes": 121,
+    "comments": 45
+  },
+  {
+    "id": 2,
+    "title": "",
+    "city": {
+      "id": 1,
+      "name": "广州"
+    },
+    "content": "+ 头部音乐公司，发展前景好\n" +
+        "+ 福利待遇超一线水平，12*14,16~20W\n" +
+        "+ 班车接送、餐补房补、24小时健身房、免费早餐+下午茶、年度健康心理体验，不定期举办明星音乐会，其他公司专属产品套餐",
+    "desc": "",
+    "company": {
+      "name": "腾讯音乐",
+      "icon": ""
+    },
+    "views": 66,
+    "likes": 111,
+    "comments": 35
+  }
+]
+
 </script>
 
 <template>
@@ -25,16 +67,10 @@ const badgeItems = [
     <el-col :span="16"><div class="grid-content ep-bg-purple" />
       <el-row>
         <el-col :span="18">
-          <PostComponent/>
-          <br>
-          <PostComponent/>
-          <br>
-          <PostComponent/>
-          <br>
-          <PostComponent/>
-          <br>
-          <PostComponent/>
-          <br>
+          <div v-for="postItem in postItems" :key="postItem.id">
+            <PostComponent :post-item="postItem" />
+            <br>
+          </div>
         </el-col>
         <el-col :span="6">
           <el-card style="max-width: 480px; margin-left: 10px; min-height: 100px">
