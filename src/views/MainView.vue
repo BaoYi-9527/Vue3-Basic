@@ -33,11 +33,12 @@ const postItems = [
     "desc": "",
     "company": {
       "name": "英伟达 NVIDA",
-      "icon": ""
+      "icon": "nvida_icon.png"
     },
     "views": 789,
     "likes": 121,
-    "comments": 45
+    "comments": 45,
+    "update_time": "刚刚"
   },
   {
     "id": 2,
@@ -52,11 +53,32 @@ const postItems = [
     "desc": "",
     "company": {
       "name": "腾讯音乐",
-      "icon": ""
+      "icon": "tencent_music.png"
     },
     "views": 66,
     "likes": 111,
-    "comments": 35
+    "comments": 35,
+    "update_time": "10分钟前"
+  },
+  {
+    "id": 3,
+    "title": "",
+    "city": {
+      "id": 1,
+      "name": "广州"
+    },
+    "content": "+ 头部音乐公司，发展前景好\n" +
+        "+ 福利待遇超一线水平，12*14,16~20W\n" +
+        "+ 班车接送、餐补房补、24小时健身房、免费早餐+下午茶、年度健康心理体验，不定期举办明星音乐会，其他公司专属产品套餐",
+    "desc": "",
+    "company": {
+      "name": "腾讯音乐",
+      "icon": "tencent_music.png"
+    },
+    "views": 66,
+    "likes": 111,
+    "comments": 35,
+    "update_time": "2024-08-30"
   }
 ]
 
