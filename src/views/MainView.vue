@@ -1,6 +1,7 @@
 <script setup>
 
 import PostComponent from "@/components/Post/PostComponent.vue";
+import {getPostList} from "@/api/post.js";
 
 const badgeItems = [
   {"id": 1, "name": '北京', "count": 167},
@@ -17,6 +18,10 @@ const badgeItems = [
   {"id": 12, "name": '苏州', "count": 42},
   {"id": 13, "name": '重庆', "count": 41},
 ]
+
+const postList = getPostList()
+
+console.log(postList)
 
 const postItems = [
   {
@@ -106,6 +111,8 @@ const companyItems = [
     "hot": 77
   }
 ]
+
+console.log(postItems)
 
 function getImageSrc(imgPath) {
   // return require(`@/assets/img/post/${imgPath}`)

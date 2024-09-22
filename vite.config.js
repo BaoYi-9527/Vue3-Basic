@@ -15,5 +15,17 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  publicDir: "public"
+  publicDir: "public",
+  server: {
+    host: '0.0.0.0',
+    port: 5173,
+    open: true,
+    proxy: {
+      '/v1': {
+        target: 'http://localhost:8787',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/v1/, ''),
+      },
+    },
+  },
 })

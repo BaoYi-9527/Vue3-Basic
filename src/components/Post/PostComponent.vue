@@ -22,7 +22,7 @@ function getImageSrc(imgPath) {
   <el-card>
     <template #header>
       <div class="card-header" style="display: flex; align-items: center; height: 100%;">
-        <el-avatar :size="'small'" :src="getImageSrc(postItem.company.icon)" alt="company logo"/>
+        <el-avatar :size="'small'" :src="getImageSrc(postItem.company.icon)" alt="company logo" style="border: darkgray 1px solid"/>
         <el-text size="small" style="margin-left: 10px; margin-right: 10px">{{ postItem.company.name }}</el-text>
         <el-text size="small" style="margin-right: 10px">
           <el-icon>
