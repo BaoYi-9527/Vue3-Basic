@@ -2,7 +2,9 @@
 
 import PostComponent from "@/components/Post/PostComponent.vue";
 import {getPostList} from "@/api/post.js";
-import {reactive} from "vue";
+import {ref} from "vue";
+// import {login} from "@/api/common.js";
+// login()
 
 const badgeItems = [
   {"id": 1, "name": '北京', "count": 167},
@@ -21,12 +23,14 @@ const badgeItems = [
 ]
 
 
+let postItems = ref([]);
 
-const postItems = reactive([])
+(async () => {
+  const response = await getPostList()
+  postItems.value = response.data.data.data
+})()
 
-getPostList().then(response => {
-  console.log(response.data)
-})
+
 
 // const postList = getPostList()
 // console.log(postList)
@@ -120,7 +124,7 @@ const companyItems = [
   }
 ]
 
-console.log(postItems)
+// console.log(postItems)
 
 function getImageSrc(imgPath) {
   // return require(`@/assets/img/post/${imgPath}`)

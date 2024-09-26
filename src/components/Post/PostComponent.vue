@@ -6,8 +6,6 @@ const props = defineProps(['postItem'])
 const postItem = props.postItem
 const id = "preview-only"
 
-
-
 function getImageSrc(imgPath) {
   // return require(`@/assets/img/post/${imgPath}`)
   // Vite 不支持 require 的方式
@@ -22,7 +20,7 @@ function getImageSrc(imgPath) {
   <el-card>
     <template #header>
       <div class="card-header" style="display: flex; align-items: center; height: 100%;">
-        <el-avatar :size="'small'" :src="getImageSrc(postItem.company.icon)" alt="company logo" style="border: darkgray 1px solid"/>
+        <el-avatar :size="'small'" :src="getImageSrc(postItem.company.logo_url)" alt="company logo" style="border: darkgray 1px solid"/>
         <el-text size="small" style="margin-left: 10px; margin-right: 10px">{{ postItem.company.name }}</el-text>
         <el-text size="small" style="margin-right: 10px">
           <el-icon>
@@ -31,7 +29,7 @@ function getImageSrc(imgPath) {
           <span> {{ postItem.city.name }} </span>
         </el-text>
         <el-text size="small">
-          {{ postItem.update_time + '发布' }}
+          {{ postItem.updated_at + ' 发布' }}
         </el-text>
       </div>
     </template>

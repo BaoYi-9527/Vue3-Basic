@@ -1,5 +1,5 @@
 import axios from 'axios'
-const service = axios.create({
+const request = axios.create({
     baseURL: '/api',
     timeout: 5000,
     headers: {
@@ -10,7 +10,7 @@ const service = axios.create({
 })
 
 // request 拦截器
-service.interceptors.request.use(
+request.interceptors.request.use(
     config => {
         const token = localStorage.getItem('token')
         if (token) {
@@ -42,19 +42,19 @@ service.interceptors.request.use(
 // )
 
 export const get_request = (url, params) => {
-    return service .get(url, { params });
+    return request .get(url, { params });
 };
 
 export const post_request = (url, data) => {
-    return service .post(url, data);
+    return request .post(url, data);
 };
 
 export const put_request = (url, data) => {
-    return service .put(url, data);
+    return request .put(url, data);
 };
 
 export const delete_request = (url, data) => {
-    return service .delete(url, data);
+    return request .delete(url, data);
 };
 
-export default service
+export default request

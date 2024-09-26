@@ -1,4 +1,4 @@
-import { request } from "@/api/api.js";
+import request from "@/service/request.js";
 
 export function getPostList() {
     return request({
