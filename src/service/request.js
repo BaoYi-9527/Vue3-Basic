@@ -1,6 +1,6 @@
 import axios from 'axios'
 const service = axios.create({
-    baseURL: 'http://localhost:8787',
+    baseURL: '/api',
     timeout: 5000,
     headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -10,15 +10,19 @@ const service = axios.create({
 })
 
 // request 拦截器
-// service.interceptors.request.use(
-//     config => {
-//         // 在这里可以设置请求头、请求参数等return config
-//     },
-//     error => {
-//         console.log(error)
-//         return Promise.reject(error)
-//     }
-// )
+service.interceptors.request.use(
+    config => {
+        const token = localStorage.getItem('token')
+        if (token) {
+            config.headers['Authorization'] = `Bearer ${token}`
+        }
+        return config
+    },
+    error => {
+        console.log(error)
+        return Promise.reject(error)
+    }
+)
 
 // response 拦截器
 // service.interceptors.response.use(

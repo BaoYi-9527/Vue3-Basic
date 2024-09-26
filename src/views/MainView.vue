@@ -2,6 +2,7 @@
 
 import PostComponent from "@/components/Post/PostComponent.vue";
 import {getPostList} from "@/api/post.js";
+import {reactive} from "vue";
 
 const badgeItems = [
   {"id": 1, "name": '北京', "count": 167},
@@ -19,74 +20,81 @@ const badgeItems = [
   {"id": 13, "name": '重庆', "count": 41},
 ]
 
-const postList = getPostList()
 
-console.log(postList)
 
-const postItems = [
-  {
-    "id": 1,
-    "title": "",
-    "city": {
-      "id": 1,
-      "name": "深圳"
-    },
-    "content": "+ 工作时间 955，年假15天 + 8天 FreeDay\n" +
-        "+ 女性员工享有22周全薪产假，男性员工享有12周全薪陪产假\n" +
-        "+ 五险一金、补充商业保险、年度体检、员工关爱计划、ESPP 员工购股计划、斯坦福医学健康计划、上午旅行保险等\n" +
-        "+ 继续教育学费报销、支持攻读在读学位",
-    "desc": "",
-    "company": {
-      "name": "英伟达 NVIDA",
-      "icon": "nvida_icon.png"
-    },
-    "views": 789,
-    "likes": 121,
-    "comments": 45,
-    "update_time": "刚刚"
-  },
-  {
-    "id": 2,
-    "title": "",
-    "city": {
-      "id": 1,
-      "name": "广州"
-    },
-    "content": "+ 头部音乐公司，发展前景好\n" +
-        "+ 福利待遇超一线水平，12*14,16~20W\n" +
-        "+ 班车接送、餐补房补、24小时健身房、免费早餐+下午茶、年度健康心理体验，不定期举办明星音乐会，其他公司专属产品套餐",
-    "desc": "",
-    "company": {
-      "name": "腾讯音乐",
-      "icon": "tencent_music.png"
-    },
-    "views": 66,
-    "likes": 111,
-    "comments": 35,
-    "update_time": "10分钟前"
-  },
-  {
-    "id": 3,
-    "title": "",
-    "city": {
-      "id": 1,
-      "name": "深圳"
-    },
-    "content": "+ 世界五百强老牌企业\n" +
-        "+ 弹性工作制、可远程办公、WLB、很少加班\n" +
-        "+ 女性友好企业，有女性、IWD领导力论坛等一系列活动，让女性员工学习和成长" +
-        "+ 15天入职年假+30天病假，女性员工还可享受28天超长产假和10天育儿假",
-    "desc": "",
-    "company": {
-      "name": "高通 Qualcomm",
-      "icon": "qualcomm.png"
-    },
-    "views": 66,
-    "likes": 111,
-    "comments": 35,
-    "update_time": "2024-08-30"
-  }
-]
+const postItems = reactive([])
+
+getPostList().then(response => {
+  console.log(response.data)
+})
+
+// const postList = getPostList()
+// console.log(postList)
+
+// const postItems = [
+//   {
+//     "id": 1,
+//     "title": "",
+//     "city": {
+//       "id": 1,
+//       "name": "深圳"
+//     },
+//     "content": "+ 工作时间 955，年假15天 + 8天 FreeDay\n" +
+//         "+ 女性员工享有22周全薪产假，男性员工享有12周全薪陪产假\n" +
+//         "+ 五险一金、补充商业保险、年度体检、员工关爱计划、ESPP 员工购股计划、斯坦福医学健康计划、上午旅行保险等\n" +
+//         "+ 继续教育学费报销、支持攻读在读学位",
+//     "desc": "",
+//     "company": {
+//       "name": "英伟达 NVIDA",
+//       "icon": "nvida_icon.png"
+//     },
+//     "views": 789,
+//     "likes": 121,
+//     "comments": 45,
+//     "update_time": "刚刚"
+//   },
+//   {
+//     "id": 2,
+//     "title": "",
+//     "city": {
+//       "id": 1,
+//       "name": "广州"
+//     },
+//     "content": "+ 头部音乐公司，发展前景好\n" +
+//         "+ 福利待遇超一线水平，12*14,16~20W\n" +
+//         "+ 班车接送、餐补房补、24小时健身房、免费早餐+下午茶、年度健康心理体验，不定期举办明星音乐会，其他公司专属产品套餐",
+//     "desc": "",
+//     "company": {
+//       "name": "腾讯音乐",
+//       "icon": "tencent_music.png"
+//     },
+//     "views": 66,
+//     "likes": 111,
+//     "comments": 35,
+//     "update_time": "10分钟前"
+//   },
+//   {
+//     "id": 3,
+//     "title": "",
+//     "city": {
+//       "id": 1,
+//       "name": "深圳"
+//     },
+//     "content": "+ 世界五百强老牌企业\n" +
+//         "+ 弹性工作制、可远程办公、WLB、很少加班\n" +
+//         "+ 女性友好企业，有女性、IWD领导力论坛等一系列活动，让女性员工学习和成长" +
+//         "+ 15天入职年假+30天病假，女性员工还可享受28天超长产假和10天育儿假",
+//     "desc": "",
+//     "company": {
+//       "name": "高通 Qualcomm",
+//       "icon": "qualcomm.png"
+//     },
+//     "views": 66,
+//     "likes": 111,
+//     "comments": 35,
+//     "update_time": "2024-08-30"
+//   }
+// ]
 
 const companyItems = [
   {
