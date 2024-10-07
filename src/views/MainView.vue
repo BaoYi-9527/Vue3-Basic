@@ -2,34 +2,26 @@
 
 import PostComponent from "@/components/Post/PostComponent.vue";
 import {getPostList} from "@/api/post.js";
+import {getCityStatistics} from "@/api/city.js";
 import {ref} from "vue";
 // import {login} from "@/api/common.js";
 // login()
 
-const badgeItems = [
-  {"id": 1, "name": '北京', "count": 167},
-  {"id": 2, "name": '上海', "count": 89},
-  {"id": 3, "name": '深圳', "count": 85},
-  {"id": 4, "name": '广州', "count": 78},
-  {"id": 5, "name": '武汉', "count": 66},
-  {"id": 6, "name": '长沙', "count": 64},
-  {"id": 7, "name": '郑州', "count": 55},
-  {"id": 8, "name": '成都', "count": 53},
-  {"id": 9, "name": '合肥', "count": 48},
-  {"id": 10, "name": '杭州', "count": 46},
-  {"id": 11, "name": '南京', "count": 44},
-  {"id": 12, "name": '苏州', "count": 42},
-  {"id": 13, "name": '重庆', "count": 41},
-]
-
-
-let postItems = ref([]);
-
-(async () => {
-  const response = await getPostList()
-  postItems.value = response.data.data.data
-})()
-
+// const badgeItems = [
+//   {"id": 1, "name": '北京', "count": 167},
+//   {"id": 2, "name": '上海', "count": 89},
+//   {"id": 3, "name": '深圳', "count": 85},
+//   {"id": 4, "name": '广州', "count": 78},
+//   {"id": 5, "name": '武汉', "count": 66},
+//   {"id": 6, "name": '长沙', "count": 64},
+//   {"id": 7, "name": '郑州', "count": 55},
+//   {"id": 8, "name": '成都', "count": 53},
+//   {"id": 9, "name": '合肥', "count": 48},
+//   {"id": 10, "name": '杭州', "count": 46},
+//   {"id": 11, "name": '南京', "count": 44},
+//   {"id": 12, "name": '苏州', "count": 42},
+//   {"id": 13, "name": '重庆', "count": 41},
+// ]
 
 
 // const postList = getPostList()
@@ -124,7 +116,19 @@ const companyItems = [
   }
 ]
 
-// console.log(postItems)
+let postItems = ref([]);
+let cityItems = ref([]);
+
+(async () => {
+  // post list
+  const postResponse = await getPostList()
+  postItems.value = postResponse.data.data.data
+  // 城市榜
+  const cityResponse = await getCityStatistics()
+  cityItems.value = cityResponse.data.data
+  // company list
+
+})()
 
 function getImageSrc(imgPath) {
   // return require(`@/assets/img/post/${imgPath}`)
@@ -149,7 +153,7 @@ function getImageSrc(imgPath) {
           <el-card style="max-width: 480px; margin-left: 10px; min-height: 100px">
             <el-text size="small">城市榜</el-text>
             <el-divider style="margin: 10px 0" />
-            <el-tag  v-for="item in badgeItems" :key="item.id" type="primary" style="margin: 5px; min-width: 60px">{{ item.name + ' ' + item.count}}</el-tag>
+            <el-tag  v-for="item in cityItems" :key="item.id" type="primary" style="margin: 5px; min-width: 60px">{{ item.city.name + ' ' + item.post_count}}</el-tag>
 <!--            <el-badge v-for="item in badgeItems" :key="item.id" :value="item.count" class="item" type="primary">-->
 <!--              <el-button size="small">{{ item.name }}</el-button>-->
 <!--            </el-badge>-->
